@@ -23,8 +23,4 @@ class Contracts:
         """
         sorted_open_contracts = sorted(open_contracts, key=lambda x: x.debt, reverse=True)
         debts = [contract.id for contract in sorted_open_contracts if contract.id not in renegotiated_contracts]
-
-        if top_n == -1:
-            return [debts.pop()]
-
         return debts[:top_n]
